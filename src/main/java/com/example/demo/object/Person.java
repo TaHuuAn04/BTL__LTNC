@@ -8,7 +8,7 @@ public class Person {
     private String username;
 
     private String name;
-    private String age;
+    private String birthday;
     private String location;
     private String email;
     private String phoneNumber;
@@ -19,16 +19,16 @@ public class Person {
         super();
     }
 
-    public Person(String name, String age, String location) {
+    public Person(String name, String birthday, String location) {
         this.name = name;
-        this.age = age;
+        this.birthday = birthday;
         this.location = location;
     }
 
 
-    public Person(String name, String age, String location, String email, String phoneNumber, String sex, String cccd) {
+    public Person(String name, String birthday, String location, String email, String phoneNumber, String sex, String cccd) {
         this.name = name;
-        this.age = age;
+        this.birthday = birthday;
         this.location = location;
         this.email = email;
         this.phoneNumber = phoneNumber;
@@ -42,11 +42,11 @@ public class Person {
     public void setName(String name) {
         this.name = name;
     }
-    public String getAge() {
-        return age;
+    public String getBirthday() {
+        return birthday;
     }
-    public void setAge(String age) {
-        this.age = age;
+    public void setBirthday(String birthday) {
+        this.birthday = birthday;
     }
     public String getLocation() {
         return location;
