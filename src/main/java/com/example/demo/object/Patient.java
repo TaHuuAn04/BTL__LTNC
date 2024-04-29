@@ -44,4 +44,8 @@ public class Patient extends Person {
         this.id = "BNNT" + serial;
         this.serial = serial;
     }
+
+    public void addRecord(RecordsPatient record){
+        this.records.add(record);
+    }
 }
