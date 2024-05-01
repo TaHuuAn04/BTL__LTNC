@@ -1,12 +1,12 @@
-package com.example.demo.object;
+package com.example.demo.objects;
 
 import org.springframework.stereotype.Component;
 
 @Component
 public class Person {
+    private String ID;
     private String password;
     private String username;
-
     private String name;
     private String birthday;
     private String location;
@@ -19,34 +19,20 @@ public class Person {
         super();
     }
 
-    public Person(String name, String birthday, String location) {
+    public Person(String name, String location, String birthday, String email, String phoneNumber, String sex, String cccd) {
         this.name = name;
-        this.birthday = birthday;
         this.location = location;
-    }
-
-
-    public Person(String name, String birthday, String location, String email, String phoneNumber, String sex, String cccd) {
-        this.name = name;
         this.birthday = birthday;
-        this.location = location;
         this.email = email;
         this.phoneNumber = phoneNumber;
         this.sex = sex;
         this.cccd = cccd;
     }
-
     public String getName() {
         return name;
     }
     public void setName(String name) {
         this.name = name;
-    }
-    public String getBirthday() {
-        return birthday;
-    }
-    public void setBirthday(String birthday) {
-        this.birthday = birthday;
     }
     public String getLocation() {
         return location;
@@ -90,5 +76,17 @@ public class Person {
     }
     public void setCccd(String cccd) {
         this.cccd = cccd;
+    }
+    public String getBirthday() {
+        return birthday;
+    }
+    public void setBirthday(String birthday) {
+        this.birthday = birthday;
+    }
+    public String getID() {
+        return ID;
+    }
+    public void setID(String ID) {
+        this.ID = ID;
     }
 }
