@@ -104,4 +104,10 @@ public class Nurse extends Person {
         this.id = "NURSE" + serial;
         this.serial = serial;
     }
+    public String generateUsername() {
+        return "NUR" + String.format("%03d", this.serial);
+    }
+    public String generatePassword() {
+        return String.valueOf(this.serial);
+    }
 }
