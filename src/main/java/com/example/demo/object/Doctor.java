@@ -83,5 +83,11 @@ public class Doctor extends Person {
         this.id = "DOCTOR" + serial;
         this.serial = serial;
     }
+    public String generateUsername() {
+        return "DOC" + String.format("%03d", this.serial);
+    }
+    public String generatePassword() {
+        return String.valueOf(this.serial);
+    }
 
 }
