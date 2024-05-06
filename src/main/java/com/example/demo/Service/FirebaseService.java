@@ -57,4 +57,65 @@ public class FirebaseService {
             return "User does not exist";
         }
     }
+
+    public String saveDoctor(Doctor doctor) throws InterruptedException, ExecutionException {
+        Firestore dbFirestore = FirestoreClient.getFirestore();
+        ApiFuture<WriteResult> collectionsApiFuture = dbFirestore.collection("doctors").document(doctor.getName()).set(doctor);
+        return collectionsApiFuture.get().getUpdateTime().toString();
+    }
+
+    public Doctor getDoctor(String name) throws InterruptedException, ExecutionException {
+        Firestore dbFirestore = FirestoreClient.getFirestore();
+        DocumentReference documentReference = dbFirestore.collection("doctors").document(name);
+        ApiFuture<DocumentSnapshot> future = documentReference.get();
+        DocumentSnapshot document = future.get();
+        if (document.exists()) {
+            return document.toObject(Doctor.class);
+        } else {
+            return null;
+        }
+    }
+
+    public String updateDoctor(Doctor doctor) throws InterruptedException, ExecutionException {
+        Firestore dbFirestore = FirestoreClient.getFirestore();
+        ApiFuture<WriteResult> collectionsApiFuture = dbFirestore.collection("doctors").document(doctor.getName()).set(doctor);
+        return collectionsApiFuture.get().getUpdateTime().toString();
+    }
+
+    public String deleteDoctor(String name) throws ExecutionException, InterruptedException {
+        Firestore dbFirestore = FirestoreClient.getFirestore();
+        ApiFuture<WriteResult> writeResult = dbFirestore.collection("doctors").document(name).delete();
+        return "Document with name " + name + " has been deleted";
+    }
+
+    public String saveNurse(Nurse nurse) throws InterruptedException, ExecutionException {
+        Firestore dbFirestore = FirestoreClient.getFirestore();
+        ApiFuture<WriteResult> result = dbFirestore.collection("nurses").document(nurse.getName()).set(nurse);
+        return result.get().getUpdateTime().toString();
+    }
+
+    public Nurse getNurse(String name) throws InterruptedException, ExecutionException {
+        Firestore dbFirestore = FirestoreClient.getFirestore();
+        DocumentReference documentReference = dbFirestore.collection("nurses").document(name);
+        ApiFuture<DocumentSnapshot> future = documentReference.get();
+        DocumentSnapshot document = future.get();
+        if (document.exists()) {
+            return document.toObject(Nurse.class);
+        } else {
+            return null;
+        }
+    }
+
+    public String updateNurse(Nurse nurse) throws InterruptedException, ExecutionException {
+        Firestore dbFirestore = FirestoreClient.getFirestore();
+        ApiFuture<WriteResult> result = dbFirestore.collection("nurses").document(nurse.getName()).set(nurse);
+        return result.get().getUpdateTime().toString();
+    }
+
+    public String deleteNurse(String name) throws InterruptedException, ExecutionException {
+        Firestore dbFirestore = FirestoreClient.getFirestore();
+        ApiFuture<WriteResult> result = dbFirestore.collection("nurses").document(name).delete();
+        return "Document with name " + name + " has been deleted";
+    }
+
 }
