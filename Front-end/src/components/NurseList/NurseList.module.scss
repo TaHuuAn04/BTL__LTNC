@@ -1,0 +1,128 @@
+// .wrapper {
+//     margin-top: 124px;
+//     background-color: #ebebeb;
+//     margin-right: 24px;
+// }
+
+// .nurse-icon {
+//     padding: 16px;
+// }
+
+// .header {
+//     display: flex;
+//     justify-content: space-between;
+//     padding: 16px;
+//     align-items: center;
+// }
+
+// .header-general {
+//     color: #00738c;
+//     display: flex;
+//     align-items: center;
+// }
+
+// .header-title {
+//     font-size: 24px;
+// }
+
+// .header-count {
+//     font-size: 40px;
+//     font-weight: 600;
+//     padding: 16px;
+//     margin-left: 12px;
+// }
+
+// .search {
+//     width: 590px;
+//     border-radius: 16px;
+//     padding: 12px 16px;
+// }
+
+// .add-nurse {
+//     display: flex;
+//     align-items: center;
+//     padding-right: 8px;
+//     border-top-right-radius: 12px;
+//     border-bottom-right-radius: 12px;
+// }
+
+// .add-nurse-btn {
+//     padding: 8px 32px;
+//     margin-left: 8px;
+//     border-radius: 12px;
+//     background-color: #0599ba;
+//     font-size: 16px;
+//     color: #fff;
+//     border: none;
+//     &:hover {
+//         cursor: pointer;
+//         background-color: #13b3d7;
+//     }
+// }
+
+.label,
+.nurse-list-item {
+    display: flex;
+    color: #003a47;
+    margin: 0 auto;
+    justify-content: center;
+}
+
+.nurse-list-item-wrap + .nurse-list-item-wrap {
+    margin-top: 8px;
+}
+
+.label div,
+.nurse-list-item div {
+    border: 1px solid #ccc;
+    margin-left: 2px;
+    font-weight: 600;
+    padding: 8px 0;
+    display: flex;
+    justify-content: center;
+}
+
+.nurse-list-item div {
+    font-weight: 400;
+}
+
+.id {
+    width: 94px;
+}
+
+.name {
+    width: 284px;
+}
+
+.sex {
+    width: 132px;
+}
+
+.qualification {
+    width: 216px;
+}
+
+.major {
+    width: 206px;
+}
+
+.floor {
+    width: 86px;
+}
+
+.room {
+    width: 98px;
+}
+
+.day-off {
+    width: 216px;
+}
+
+.nurse-list {
+    list-style-type: none;
+    padding-left: 0;
+    overflow-y: scroll;
+    max-height: 380px;
+    padding-bottom: 16px;
+    
+}
